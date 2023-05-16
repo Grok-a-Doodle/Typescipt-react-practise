@@ -5,20 +5,6 @@ const TweetSearchResults = () => {
     (state: TweetState) => state
   );
 
-  // const refactored = Object.entries(
-  //   tweets.reduce((acc, curr) => {
-  //     console.log({ acc, curr });
-  //     if (!acc[curr.category]) {
-  //       acc[curr.category] = [];
-  //     }
-
-  //     acc[curr.category] = [...acc[curr.category], curr];
-
-  //     return acc;
-  //   }, {})
-  // );
-  // console.log("refactored: ", refactored);
-  // const rows: Array<JSX.Element> = [];
   const rows: JSX.Element[] = [];
 
   let isLastCategory: string | null = null;
@@ -43,23 +29,6 @@ const TweetSearchResults = () => {
   return (
     <>
       {rows}
-      {/* {refactored.map(([key, arr]) => {
-        return (
-          <>
-            <h3>{key}</h3>
-            {arr.map((tweet) => {
-              return (
-                <section
-                  style={{ display: "flex", justifyContent: "space-between" }}
-                >
-                  <p>{tweet.text}</p>
-                  <p>{tweet.reTweets}</p>
-                </section>
-              );
-            })}
-          </>
-        );
-      })} */}
       <button
         onClick={() =>
           addTweet({
