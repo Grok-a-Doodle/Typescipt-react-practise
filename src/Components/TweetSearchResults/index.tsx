@@ -1,9 +1,7 @@
 import { TweetState, useTweetStore } from "../../Store/store.ts";
 
 const TweetSearchResults = () => {
-  const { tweets, addTweet, removeTweet } = useTweetStore(
-    (state: TweetState) => state
-  );
+  const { tweets, addTweet } = useTweetStore((state: TweetState) => state);
 
   const rows: JSX.Element[] = [];
 
